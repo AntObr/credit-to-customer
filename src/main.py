@@ -20,8 +20,10 @@ import endpoints
 from protorpc import message_types
 from protorpc import messages
 from protorpc import remote
+import manager
 # [END imports]
 
+mgr = manager.Manager('data.json')
 
 # [START messages]
 class EchoRequest(messages.Message):
@@ -35,7 +37,14 @@ class EchoResponse(messages.Message):
 
 ECHO_RESOURCE = endpoints.ResourceContainer(
     EchoRequest,
-    n=messages.IntegerField(2, default=1))
+    n=messages.IntegerField(2, default=1)
+)
+
+GET_EMAIL_RESOURCE = endpoints.ResourceContainer(
+    message_types.VoidMessage,
+    trailingDigits = messages.IntegerField(1, default = 1, required=True),
+    leadingDigits = messages.IntegerField(2, default = 1, required=True)
+)
 # [END messages]
 
 
@@ -49,53 +58,38 @@ class EchoApi(remote.Service):
         # This method returns an Echo message.
         EchoResponse,
         path='echo',
-        http_method='POST',
+        http_method='PUT',
         name='echo')
     def echo(self, request):
-        output_content = ' '.join([request.content] * request.n)
-        return EchoResponse(content=output_content)
+        mgr.load()
+        print(request.content)
+        mgr.add(request.content)
+        if (isinstance(request.content, str())):
+            out = "string"
+        else:
+            out = mgr.getDataDumps()
+        return EchoResponse(content = out)
 
     @endpoints.method(
-        # This method takes a ResourceContainer defined above.
-        ECHO_RESOURCE,
-        # This method returns an Echo message.
+        GET_EMAIL_RESOURCE,
+        # message_types.VoidMessage,
         EchoResponse,
-        path='echo/{n}',
-        http_method='POST',
-        name='echo_path_parameter')
-    def echo_path_parameter(self, request):
-        output_content = ' '.join([request.content] * request.n)
-        return EchoResponse(content=output_content)
-
-    @endpoints.method(
-        # This method takes a ResourceContainer defined above.
-        message_types.VoidMessage,
-        # This method returns an Echo message.
-        EchoResponse,
-        path='echo/getApiKey',
+        # path='echo/getEmails/{i}',
+        path='echo/getEmails',
         http_method='GET',
-        name='echo_api_key')
-    def echo_api_key(self, request):
-        return EchoResponse(content=request.get_unrecognized_field_info('key'))
+        name='echo_get_emails'
+    )
+    def echo_get_emails(self, request):
+        query = {
+            "startDate": 12.08,
+            "trailingDigits": 3456,
+            "endDate": 15.08,
+            "cardType": "MasterCard",
+            "leadingDigits": 5407
+        }
+        out = mgr.search(query)
+        return EchoResponse(content = out)
 
-    @endpoints.method(
-        # This method takes an empty request body.
-        message_types.VoidMessage,
-        # This method returns an Echo message.
-        EchoResponse,
-        path='echo/getUserEmail',
-        http_method='GET',
-        # Require auth tokens to have the following scopes to access this API.
-        scopes=[endpoints.EMAIL_SCOPE],
-        # OAuth2 audiences allowed in incoming tokens.
-        audiences=['your-oauth-client-id.com'])
-    def get_user_email(self, request):
-        user = endpoints.get_current_user()
-        # If there's no user defined, the request was unauthenticated, so we
-        # raise 401 Unauthorized.
-        if not user:
-            raise endpoints.UnauthorizedException
-        return EchoResponse(content=user.email())
 # [END echo_api]
 
 
