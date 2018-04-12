@@ -1,0 +1,181 @@
+Metadata-Version: 2.0
+Name: azure-mgmt
+Version: 2.0.0
+Summary: Microsoft Azure Resource Management Client Libraries for Python
+Home-page: https://github.com/Azure/azure-sdk-for-python
+Author: Microsoft Corporation
+Author-email: azpysdkhelp@microsoft.com
+License: MIT License
+Description-Content-Type: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: License :: OSI Approved :: MIT License
+Requires-Dist: azure-mgmt-advisor (~=1.0)
+Requires-Dist: azure-mgmt-applicationinsights (~=0.1.1)
+Requires-Dist: azure-mgmt-authorization (~=0.30.0)
+Requires-Dist: azure-mgmt-batch (~=5.0)
+Requires-Dist: azure-mgmt-batchai (~=0.2.0)
+Requires-Dist: azure-mgmt-billing (~=0.1.0)
+Requires-Dist: azure-mgmt-cdn (~=2.0)
+Requires-Dist: azure-mgmt-cognitiveservices (~=2.0)
+Requires-Dist: azure-mgmt-commerce (~=1.0)
+Requires-Dist: azure-mgmt-compute (~=3.0)
+Requires-Dist: azure-mgmt-consumption (~=2.0)
+Requires-Dist: azure-mgmt-containerinstance (~=0.3.1)
+Requires-Dist: azure-mgmt-containerregistry (~=1.0)
+Requires-Dist: azure-mgmt-containerservice (~=3.0)
+Requires-Dist: azure-mgmt-cosmosdb (~=0.3.1)
+Requires-Dist: azure-mgmt-datafactory (~=0.4.0)
+Requires-Dist: azure-mgmt-datalake-analytics (~=0.3.0)
+Requires-Dist: azure-mgmt-datalake-store (~=0.3.0)
+Requires-Dist: azure-mgmt-devtestlabs (~=2.1)
+Requires-Dist: azure-mgmt-dns (~=1.2)
+Requires-Dist: azure-mgmt-eventgrid (~=0.4.0)
+Requires-Dist: azure-mgmt-eventhub (~=1.2)
+Requires-Dist: azure-mgmt-hanaonazure (~=0.1.0)
+Requires-Dist: azure-mgmt-iothub (~=0.4.0)
+Requires-Dist: azure-mgmt-iothubprovisioningservices (~=0.1.0)
+Requires-Dist: azure-mgmt-keyvault (~=0.40.0)
+Requires-Dist: azure-mgmt-loganalytics (~=0.1.0)
+Requires-Dist: azure-mgmt-logic (~=2.1)
+Requires-Dist: azure-mgmt-machinelearningcompute (~=0.4.0)
+Requires-Dist: azure-mgmt-managementpartner (~=0.1.0)
+Requires-Dist: azure-mgmt-marketplaceordering (~=0.1.0)
+Requires-Dist: azure-mgmt-media (~=0.2.0)
+Requires-Dist: azure-mgmt-monitor (~=0.4.0)
+Requires-Dist: azure-mgmt-msi (~=0.1.0)
+Requires-Dist: azure-mgmt-network (~=1.7)
+Requires-Dist: azure-mgmt-notificationhubs (~=1.0)
+Requires-Dist: azure-mgmt-powerbiembedded (~=1.0)
+Requires-Dist: azure-mgmt-rdbms (~=0.1.0)
+Requires-Dist: azure-mgmt-recoveryservices (~=0.2.0)
+Requires-Dist: azure-mgmt-recoveryservicesbackup (~=0.1.1)
+Requires-Dist: azure-mgmt-redis (~=5.0)
+Requires-Dist: azure-mgmt-relay (~=0.1.0)
+Requires-Dist: azure-mgmt-reservations (~=0.1.0)
+Requires-Dist: azure-mgmt-resource (~=1.2)
+Requires-Dist: azure-mgmt-scheduler (~=1.1)
+Requires-Dist: azure-mgmt-search (~=1.0)
+Requires-Dist: azure-mgmt-servermanager (~=1.2)
+Requires-Dist: azure-mgmt-servicebus (~=0.4.0)
+Requires-Dist: azure-mgmt-servicefabric (~=0.1.0)
+Requires-Dist: azure-mgmt-sql (~=0.8.5)
+Requires-Dist: azure-mgmt-storage (~=1.5)
+Requires-Dist: azure-mgmt-subscription (~=0.1.0)
+Requires-Dist: azure-mgmt-trafficmanager (~=0.40.0)
+Requires-Dist: azure-mgmt-web (~=0.34.1)
+
+Microsoft Azure SDK for Python
+==============================
+
+This is the Microsoft Azure Resource Management bundle.
+
+Azure Resource Manager (ARM) is the next generation of management APIs that
+replace the old Azure Service Management (ASM).
+
+This package does not contain any code in itself. It installs a set
+of packages that provide management APIs for the various Azure services.
+
+All packages in this bundle have been tested with Python 2.7, 3.4, 3.5 and 3.6.
+
+This package uses PEP440 syntax, and then requires pip >= 6.0 and/or setuptools >= 8.0
+to be installed.
+
+For a more complete set of Azure libraries, see the `azure <https://pypi.python.org/pypi/azure>`__ bundle package.
+
+
+Documentation
+=============
+
+All documentation related to these packages can be found at http://docs.microsoft.com/python/azure/
+
+
+Features
+========
+
+This version of the Azure Management package bundle consists of the
+following packages. Follow the links for more information on each package.
+Note that versions are fixed at the minor version number level
+(i.e. no breaking changes can be introduced, but features are allowed)
+
+-  `azure-mgmt-advisor v1.x <https://pypi.python.org/pypi/azure-mgmt-advisor>`__
+-  `azure-mgmt-applicationinsights v0.1.x <https://pypi.python.org/pypi/azure-mgmt-applicationinsights>`__
+-  `azure-mgmt-authorization v0.30.x <https://pypi.python.org/pypi/azure-mgmt-authorization>`__
+-  `azure-mgmt-batch v5.x <https://pypi.python.org/pypi/azure-mgmt-batch>`__
+-  `azure-mgmt-batchai v0.2.x <https://pypi.python.org/pypi/azure-mgmt-batchai>`__
+-  `azure-mgmt-billing v0.1.x <https://pypi.python.org/pypi/azure-mgmt-billing>`__
+-  `azure-mgmt-cdn v2.x <https://pypi.python.org/pypi/azure-mgmt-cdn>`__
+-  `azure-mgmt-cognitiveservices v2.x <https://pypi.python.org/pypi/azure-mgmt-cognitiveservices>`__
+-  `azure-mgmt-commerce v1.x <https://pypi.python.org/pypi/azure-mgmt-commerce>`__
+-  `azure-mgmt-compute v3.x <https://pypi.python.org/pypi/azure-mgmt-compute>`__
+-  `azure-mgmt-consumption v2.x <https://pypi.python.org/pypi/azure-mgmt-consumption>`__
+-  `azure-mgmt-containerinstance v0.3.x <https://pypi.python.org/pypi/azure-mgmt-containerinstance>`__
+-  `azure-mgmt-containerregistry v1.x <https://pypi.python.org/pypi/azure-mgmt-containerregistry>`__
+-  `azure-mgmt-containerservice v3.x <https://pypi.python.org/pypi/azure-mgmt-containerservice>`__
+-  `azure-mgmt-cosmosdb v0.3.x <https://pypi.python.org/pypi/azure-mgmt-cosmosdb>`__
+-  `azure-mgmt-datafactory v0.4.x <https://pypi.python.org/pypi/azure-mgmt-datafactory>`__
+-  `azure-mgmt-datalake-analytics v0.3.x <https://pypi.python.org/pypi/azure-mgmt-datalake-analytics>`__
+-  `azure-mgmt-datalake-store v0.3.x <https://pypi.python.org/pypi/azure-mgmt-datalake-store>`__
+-  `azure-mgmt-devtestlabs v2.x <https://pypi.python.org/pypi/azure-mgmt-devtestlabs>`__
+-  `azure-mgmt-dns v1.x <https://pypi.python.org/pypi/azure-mgmt-dns>`__
+-  `azure-mgmt-eventgrid v0.4.x <https://pypi.python.org/pypi/azure-mgmt-eventgrid>`__
+-  `azure-mgmt-eventhub v1.x <https://pypi.python.org/pypi/azure-mgmt-eventhub>`__
+-  `azure-mgmt-hanaonazure v0.1.x <https://pypi.python.org/pypi/azure-mgmt-hanaonazure>`__
+-  `azure-mgmt-iothub v0.4.x <https://pypi.python.org/pypi/azure-mgmt-iothub>`__
+-  `azure-mgmt-iothubprovisioningservices v0.1.x <https://pypi.python.org/pypi/azure-mgmt-iothubprovisioningservices>`__
+-  `azure-mgmt-keyvault v0.40.x <https://pypi.python.org/pypi/azure-mgmt-keyvault>`__
+-  `azure-mgmt-loganalytics v0.1.x <https://pypi.python.org/pypi/azure-mgmt-loganalytics>`__
+-  `azure-mgmt-logic v2.x <https://pypi.python.org/pypi/azure-mgmt-logic>`__
+-  `azure-mgmt-machinelearningcompute v0.4.x <https://pypi.python.org/pypi/azure-mgmt-machinelearningcompute>`__
+-  `azure-mgmt-managementpartner v0.1.x <https://pypi.python.org/pypi/azure-mgmt-managementpartner>`__
+-  `azure-mgmt-marketplaceordering v0.1.x <https://pypi.python.org/pypi/azure-mgmt-marketplaceordering>`__
+-  `azure-mgmt-media v0.2.x <https://pypi.python.org/pypi/azure-mgmt-media>`__
+-  `azure-mgmt-monitor v0.4.x <https://pypi.python.org/pypi/azure-mgmt-monitor>`__
+-  `azure-mgmt-msi v0.1.x <https://pypi.python.org/pypi/azure-mgmt-msi>`__
+-  `azure-mgmt-network v1.x <https://pypi.python.org/pypi/azure-mgmt-network>`__
+-  `azure-mgmt-notificationhubs v1.x <https://pypi.python.org/pypi/azure-mgmt-notificationhubs>`__
+-  `azure-mgmt-powerbiembedded v1.x <https://pypi.python.org/pypi/azure-mgmt-powerbiembedded>`__
+-  `azure-mgmt-rdbms v0.1.x <https://pypi.python.org/pypi/azure-mgmt-rdbms>`__
+-  `azure-mgmt-recoveryservices v0.2.x <https://pypi.python.org/pypi/azure-mgmt-recoveryservices>`__
+-  `azure-mgmt-recoveryservicesbackup v0.1.x <https://pypi.python.org/pypi/azure-mgmt-recoveryservicesbackup>`__
+-  `azure-mgmt-redis v5.x <https://pypi.python.org/pypi/azure-mgmt-redis>`__
+-  `azure-mgmt-relay v0.1.x <https://pypi.python.org/pypi/azure-mgmt-relay>`__
+-  `azure-mgmt-reservations v0.1.x <https://pypi.python.org/pypi/azure-mgmt-reservations>`__
+-  `azure-mgmt-resource v1.x <https://pypi.python.org/pypi/azure-mgmt-resource>`__
+-  `azure-mgmt-scheduler v1.x <https://pypi.python.org/pypi/azure-mgmt-scheduler>`__
+-  `azure-mgmt-search v1.x <https://pypi.python.org/pypi/azure-mgmt-search>`__
+-  `azure-mgmt-servermanager v1.x <https://pypi.python.org/pypi/azure-mgmt-servermanager>`__
+-  `azure-mgmt-servicebus v0.4.x <https://pypi.python.org/pypi/azure-mgmt-servicebus>`__
+-  `azure-mgmt-servicefabric v0.1.x <https://pypi.python.org/pypi/azure-mgmt-servicefabric>`__
+-  `azure-mgmt-sql v0.8.x <https://pypi.python.org/pypi/azure-mgmt-sql>`__
+-  `azure-mgmt-storage v1.x <https://pypi.python.org/pypi/azure-mgmt-storage>`__
+-  `azure-mgmt-subscription v0.1.x <https://pypi.python.org/pypi/azure-mgmt-subscription>`__
+-  `azure-mgmt-trafficmanager v0.40.x <https://pypi.python.org/pypi/azure-mgmt-trafficmanager>`__
+-  `azure-mgmt-web v0.34.x <https://pypi.python.org/pypi/azure-mgmt-web>`__
+
+Note that if you don't need all of these packages, you can install/uninstall them individually.
+
+
+Installation
+============
+
+To install the Azure Resource Management bundle, type:
+
+.. code:: shell
+
+    pip install azure-mgmt
+
+
+Compatibility
+=============
+
+For details on the breaking changes, see the PyPI page of each individual package.
+
+

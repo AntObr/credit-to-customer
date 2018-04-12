@@ -1,0 +1,52 @@
+Metadata-Version: 2.0
+Name: rackspaceauth
+Version: 0.2.0
+Summary: keystoneauth plugin for Rackspace's authentication service
+Home-page: https://developer.rackspace.com/
+Author: Rackspace
+Author-email: sdk-support@rackspace.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Environment :: OpenStack
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Requires-Dist: pbr (>=1.6)
+Requires-Dist: keystoneauth1 (>=1.0.0)
+Requires-Dist: requests (!=2.8.0,>=2.5.2)
+
+keystoneauth plugin for Rackspace authentication
+================================================
+
+.. image:: https://travis-ci.org/rackerlabs/python-rackspace-auth.svg
+    :target: https://travis-ci.org/rackerlabs/python-rackspace-auth
+
+This package provides plugins to
+`keystoneauth1 <https://pypi.python.org/pypi/keystoneauth1/>`_,
+the OpenStack Keystone authentication library, for Rackspace's supported
+authentication methods: API key, password, and token.
+
+Usage
+-----
+
+The following example authenticates Mayor McCheese with his API key,
+as found in his `control panel <https://mycloud.rackspace.com/>`_. ::
+
+    from rackspaceauth import v2
+    from keystoneauth1 import session
+
+    auth = v2.APIKey(username="Mayor McCheese",
+                     key="OMGCHEESEISGREAT")
+
+    sess = session.Session(auth=auth)
+    sess.get_token()
+
+
+

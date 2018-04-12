@@ -1,0 +1,13 @@
+[openstack.auth.plugin]
+rackspace = rackspace.auth.identity.rackspace:Discoverable
+rackspace_password = rackspace.auth.identity.rackspace:Password
+rackspace_token = rackspace.auth.identity.rackspace:Token
+
+[rackspace]
+backup = rackspace.backup.backup_service:BackupService
+database = rackspace.database.database_service:DatabaseService
+load_balancer = rackspace.load_balancer.load_balancer_service:LoadBalancerService
+message = rackspace.message.message_service:MessageService
+monitoring = rackspace.monitoring.monitoring_service:MonitoringService
+object_store = rackspace.object_store.object_store_service:ObjectStoreService
+
