@@ -1,0 +1,32 @@
+[
+    [
+        "1@email.com",
+        {
+            "startDate": 1208,
+            "cardType": "MasterCard",
+            "trailingDigits": 3456,
+            "endDate": 1508,
+            "leadingDigits": 5407
+        }
+    ],
+    [
+        "2@email.com",
+        {
+            "startDate": 1208,
+            "cardType": "MasterCard",
+            "trailingDigits": 3456,
+            "endDate": 1508,
+            "leadingDigits": 5407
+        }
+    ],
+    [
+        "3@email.com",
+        {
+            "startDate": 1308,
+            "cardType": "MasterCard",
+            "trailingDigits": 1234,
+            "endDate": 1608, 
+            "leadingDigits": 5407
+        }
+    ]
+]
