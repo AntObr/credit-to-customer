@@ -25,7 +25,7 @@
             "startDate": 1308,
             "cardType": "MasterCard",
             "trailingDigits": 1234,
-            "endDate": 1608,
+            "endDate": 1608, 
             "leadingDigits": 5407
         }
     ]

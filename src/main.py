@@ -1,98 +1,42 @@
-# Copyright 2016 Google Inc. All rights reserved.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-
-"""This is a sample Hello World API implemented using Google Cloud
-Endpoints."""
-
-# [START imports]
-import endpoints
-from protorpc import message_types
-from protorpc import messages
-from protorpc import remote
+import webapp2
 import manager
-# [END imports]
+import json
 
 mgr = manager.Manager('data.json')
+mgr.load()
 
-# [START messages]
-class EchoRequest(messages.Message):
-    content = messages.StringField(1)
-
-
-class EchoResponse(messages.Message):
-    """A proto Message that contains a simple string field."""
-    content = messages.StringField(1)
-
-
-ECHO_RESOURCE = endpoints.ResourceContainer(
-    EchoRequest,
-    n=messages.IntegerField(2, default=1)
-)
-
-GET_EMAIL_RESOURCE = endpoints.ResourceContainer(
-    message_types.VoidMessage,
-    trailingDigits = messages.IntegerField(1, default = 1, required=True),
-    leadingDigits = messages.IntegerField(2, default = 1, required=True)
-)
-# [END messages]
-
-
-# [START echo_api]
-@endpoints.api(name='echo', version='v1')
-class EchoApi(remote.Service):
-
-    @endpoints.method(
-        # This method takes a ResourceContainer defined above.
-        ECHO_RESOURCE,
-        # This method returns an Echo message.
-        EchoResponse,
-        path='echo',
-        http_method='PUT',
-        name='echo')
-    def echo(self, request):
-        mgr.load()
-        print(request.content)
-        mgr.add(request.content)
-        if (isinstance(request.content, str())):
-            out = "string"
-        else:
-            out = mgr.getDataDumps()
-        return EchoResponse(content = out)
-
-    @endpoints.method(
-        GET_EMAIL_RESOURCE,
-        # message_types.VoidMessage,
-        EchoResponse,
-        # path='echo/getEmails/{i}',
-        path='echo/getEmails',
-        http_method='GET',
-        name='echo_get_emails'
-    )
-    def echo_get_emails(self, request):
+class Test(webapp2.RequestHandler):
+    def get(self):
         query = {
-            "startDate": 12.08,
-            "trailingDigits": 3456,
-            "endDate": 15.08,
-            "cardType": "MasterCard",
-            "leadingDigits": 5407
+            "leadingDigits": int(self.request.get('leadingDigits')),
+            "trailingDigits": int(self.request.get('trailingDigits')),
+            "startDate": int(self.request.get('startDate')),
+            "endDate": int(self.request.get('startDate')),
+            "cardType": self.request.get('cardType')
         }
-        out = mgr.search(query)
-        return EchoResponse(content = out)
+        print(query)
+        result = mgr.search(query)
+        print(result)
+        self.response.write("result:</br>" + result + "</br>query:</br>" + str(query) + "</br>dump:</br>" + mgr.getDataDumps())
 
-# [END echo_api]
+    # DONE
+    def put(self):
+        mgr.addJsonify(self.request.body)
+        self.response.write(mgr.getDataDumps())
+
+class Reload(webapp2.RequestHandler):
+    def get(self):
+        mgr.load()
+        self.response.write("RELOADED: " + mgr.getDataDumps())
+
+app = webapp2.WSGIApplication([
+    ('/test', Test),
+    ('/reload', Reload)
+])
+
+# localhost:8080/test?leadingDigits=5407&trailingDigits=3456&startDate=1208&endDate=1508&cardType=MasterCard
+# curl --request GET --header "Content-Type: application/json" localhost:8080/test?leadingDigits=5407&trailingDigits=3456&startDate=1208&endDate=1508&cardType=MasterCard
 
 
-# [START api_server]
-api = endpoints.api_server([EchoApi])
-# [END api_server]
+# curl --request PUT --header "Content-Type: application/json" --data "["put@email.com", {"test": "testPut"}]" http://localhost:8080/test
+# curl --request PUT --header "Content-Type: application/json" --data '["put@email.com", {"test": "testPut"}]' http://localhost:8080/test

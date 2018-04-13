@@ -27,6 +27,27 @@
     "version": "v1"
   },
   "paths": {
+    "/echo/v1/echo/getEmails" : {
+      "get": {
+        "operationId": "EchoApi_getEmails",
+        "parameters" : [
+          {
+            "name": "trailingDigits",
+            "in": "query",
+            "description": "Trailing digits",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "leadingDigits",
+            "in": "query",
+            "description": "Leading digits",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
     "/echo/v1/echo": {
       "post": {
         "operationId": "EchoApi_echo",

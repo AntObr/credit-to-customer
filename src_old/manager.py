@@ -18,10 +18,7 @@ class Manager:
 
     def add(self, d):
         self.data.append(d)
-
-    def addJsonify(self, d):
-        d = json.loads(d)
-        self.data.append(d)
+        # self.save()
 
     def getData(self):
         return self.data
@@ -29,9 +26,9 @@ class Manager:
     def getDataDumps(self, i=0):
         return json.dumps(self.data, indent=i)
 
-    def search(self, content):
-        out = []
-        for x in self.data:
-            if x[1] == content:
-                out.append(x[0])
-        return json.dumps(out)
+    # def search(self, content):
+    #     out = []
+    #     for x in self.data:
+    #         if x[1] == content:
+    #             out.append(x[0])
+    #     return json.dumps(out)
