@@ -2,10 +2,10 @@ import manager
 
 mgr = manager.Manager('data.json')
 
-leadingDigits="5407"
-trailingDigits="3456"
-startDate="1208"
-endDate="1508"
+leadingDigits=5407
+trailingDigits=3456
+startDate=1208
+endDate=1508
 cardType="MasterCard"
 
 query = {

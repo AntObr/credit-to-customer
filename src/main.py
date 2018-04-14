@@ -12,7 +12,7 @@ class Test(webapp2.RequestHandler):
             "trailingDigits": int(self.request.get('trailingDigits')),
             "startDate": int(self.request.get('startDate')),
             "endDate": int(self.request.get('startDate')),
-            "cardType": self.request.get('cardType')
+            "cardType": str(self.request.get('cardType'))
         }
         print(query)
         result = mgr.search(query)
@@ -34,9 +34,7 @@ app = webapp2.WSGIApplication([
     ('/reload', Reload)
 ])
 
-# localhost:8080/test?leadingDigits=5407&trailingDigits=3456&startDate=1208&endDate=1508&cardType=MasterCard
 # curl --request GET --header "Content-Type: application/json" localhost:8080/test?leadingDigits=5407&trailingDigits=3456&startDate=1208&endDate=1508&cardType=MasterCard
+# http://localhost:8080/test?leadingDigits=5407&trailingDigits=3456&startDate=1208&endDate=1508&cardType="MasterCard"
 
-
-# curl --request PUT --header "Content-Type: application/json" --data "["put@email.com", {"test": "testPut"}]" http://localhost:8080/test
 # curl --request PUT --header "Content-Type: application/json" --data '["put@email.com", {"test": "testPut"}]' http://localhost:8080/test
