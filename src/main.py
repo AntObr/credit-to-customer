@@ -1,6 +1,5 @@
 import webapp2
 import manager
-import json
 
 mgr = manager.Manager('data.json')
 mgr.load()
