@@ -29,9 +29,12 @@ class Manager:
     def getDataDumps(self, i=0):
         return json.dumps(self.data, indent=i)
 
-    def search(self, content):
+    def search(self, content, returnType = ""):
         out = []
         for x in self.data:
             if x[1] == content:
                 out.append(x[0])
-        return json.dumps(out)
+        if returnType == "string":
+            return json.dumps(out)
+        else:
+            return out

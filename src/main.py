@@ -6,35 +6,22 @@ mgr = manager.Manager('data.json')
 mgr.load()
 
 class Test(webapp2.RequestHandler):
+
     def get(self):
         query = {
             "leadingDigits": int(self.request.get('leadingDigits')),
             "trailingDigits": int(self.request.get('trailingDigits')),
             "startDate": int(self.request.get('startDate')),
-            "endDate": int(self.request.get('startDate')),
+            "endDate": int(self.request.get('endDate')),
             "cardType": str(self.request.get('cardType'))
         }
-        print(query)
-        result = mgr.search(query)
-        print(result)
-        self.response.write("result:</br>" + result + "</br>query:</br>" + str(query) + "</br>dump:</br>" + mgr.getDataDumps())
+        result = mgr.search(query, "string")
+        self.response.write(result)
 
-    # DONE
     def put(self):
         mgr.addJsonify(self.request.body)
         self.response.write(mgr.getDataDumps())
 
-class Reload(webapp2.RequestHandler):
-    def get(self):
-        mgr.load()
-        self.response.write("RELOADED: " + mgr.getDataDumps())
-
 app = webapp2.WSGIApplication([
-    ('/test', Test),
-    ('/reload', Reload)
+    ('/test', Test)
 ])
-
-# curl --request GET --header "Content-Type: application/json" localhost:8080/test?leadingDigits=5407&trailingDigits=3456&startDate=1208&endDate=1508&cardType=MasterCard
-# http://localhost:8080/test?leadingDigits=5407&trailingDigits=3456&startDate=1208&endDate=1508&cardType="MasterCard"
-
-# curl --request PUT --header "Content-Type: application/json" --data '["put@email.com", {"test": "testPut"}]' http://localhost:8080/test
