@@ -1,0 +1,22 @@
+﻿<Properties StartupConfiguration="{44E13960-6AD6-4A2D-8627-DDF7ECF4879E}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="credit-to-customer-interface/CtcApiHandler.cs">
+    <Files>
+      <File FileName="credit-to-customer-interface/Program.cs" Line="41" Column="2" NotebookId="1" />
+      <File FileName="credit-to-customer-interface/CardSlipParser.cs" Line="33" Column="22" NotebookId="2" />
+    </Files>
+    <FloatingWindows>
+      <FloatingWindow WindowId="1" X="0" Y="23" Width="1920" Height="1035">
+        <Files>
+          <File FileName="credit-to-customer-interface/CtcApiHandler.cs" Line="19" Column="66" />
+        </Files>
+      </FloatingWindow>
+    </FloatingWindows>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.credit-to-customer-interface PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>

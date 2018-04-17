@@ -1,0 +1,11 @@
+/Users/aobrie/Projects/credit-to-customer-interface/credit-to-customer-interface/obj/Debug/netcoreapp2.0/credit-to-customer-interface.csprojResolveAssemblyReference.cache
+/Users/aobrie/Projects/credit-to-customer-interface/credit-to-customer-interface/obj/Debug/netcoreapp2.0/credit-to-customer-interface.csproj.CoreCompileInputs.cache
+/Users/aobrie/Projects/credit-to-customer-interface/credit-to-customer-interface/obj/Debug/netcoreapp2.0/credit-to-customer-interface.AssemblyInfoInputs.cache
+/Users/aobrie/Projects/credit-to-customer-interface/credit-to-customer-interface/obj/Debug/netcoreapp2.0/credit-to-customer-interface.AssemblyInfo.cs
+/Users/aobrie/Projects/credit-to-customer-interface/credit-to-customer-interface/bin/Debug/netcoreapp2.0/credit-to-customer-interface.deps.json
+/Users/aobrie/Projects/credit-to-customer-interface/credit-to-customer-interface/bin/Debug/netcoreapp2.0/credit-to-customer-interface.runtimeconfig.json
+/Users/aobrie/Projects/credit-to-customer-interface/credit-to-customer-interface/bin/Debug/netcoreapp2.0/credit-to-customer-interface.runtimeconfig.dev.json
+/Users/aobrie/Projects/credit-to-customer-interface/credit-to-customer-interface/bin/Debug/netcoreapp2.0/credit-to-customer-interface.dll
+/Users/aobrie/Projects/credit-to-customer-interface/credit-to-customer-interface/bin/Debug/netcoreapp2.0/credit-to-customer-interface.pdb
+/Users/aobrie/Projects/credit-to-customer-interface/credit-to-customer-interface/obj/Debug/netcoreapp2.0/credit-to-customer-interface.dll
+/Users/aobrie/Projects/credit-to-customer-interface/credit-to-customer-interface/obj/Debug/netcoreapp2.0/credit-to-customer-interface.pdb
